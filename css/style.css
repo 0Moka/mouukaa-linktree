@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #dbeafe);
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+/* Container Utama */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffffcc;
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  min-height: 90vh;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* .background-img tidak diubah */
+.background-img {
+  position: absolute;
+  top: 0;
+  right: -10rem;
+  width: 400px;
+  height: 39rem;
+  background-image: url("/img/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+  opacity: 0.75;
+  z-index: 0;
+  pointer-events: none; /* agar tidak mengganggu klik */
+  
+}
+
+/* Konten bagian kiri */
+.left-content {
+  padding: 2rem 1.5rem;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bagian profil */
+.profile {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.field {
+  font-size: 1rem;
+  color: #0800ff;
+}
+
+.desc {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+/* Daftar tautan */
+.link-list {
+  width: 100%;
+  margin-top: 1.5rem;
+  overflow-y: auto;
+  max-height: 40vh;
+  padding-right: 6px;
+}
+
+.link-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.link-list::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+.link-item {
+  background-color: #e0f2fe;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.link-item i {
+  font-size: 1.2rem;
+}
+
+.link-item:hover {
+  background-color: #3b82f6;
+  color: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsif Tablet */
+@media (max-width: 768px) {
+  .left-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .desc {
+    font-size: 0.85rem;
+  }
+
+  .link-list {
+    max-height: 50vh;
+  }
+}
+
+/* Responsif HP */
+@media (max-width: 480px) {
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .field {
+    font-size: 0.9rem;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+  }
+
+  .link-item {
+    font-size: 0.9rem;
+    gap: 0.75rem;
+  }
+
+  .link-item i {
+    font-size: 1rem;
+  }
+}
